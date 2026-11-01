@@ -465,3 +465,8 @@ video { display: block; max-width: 100%; background: #000; }
 .fig-link { display: block; color: inherit; }
 .fig-link:hover .frame { border-color: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .tile video { transition: none; } }
+
+/* ---------- headshot in the profile card ---------- */
+.portrait.portrait-photo { height: 420px; background: #2A2C30; background-image: none; }
+.portrait.portrait-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+@media (max-width: 600px) { .portrait.portrait-photo { height: 340px; } }
