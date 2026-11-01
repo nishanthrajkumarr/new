@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- review copy: remove this robots tag when the site goes live on nishanthrajkumar.com/new -->
+<meta name="robots" content="noindex">
+<title>Dandebot — Nishanth Rajkumar</title>
+<meta name="description" content="Dandebot: an all-in-one autonomous lawn-care robot built on ROS 2 and NVIDIA Jetson.">
+<link rel="canonical" href="https://nishanthrajkumar.com/new/dandebot.html">
+<meta name="theme-color" content="#0A0B0D">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nishanth Rajkumar">
+<meta property="og:title" content="Dandebot — Nishanth Rajkumar">
+<meta property="og:description" content="Dandebot: an all-in-one autonomous lawn-care robot built on ROS 2 and NVIDIA Jetson.">
+<meta property="og:url" content="https://nishanthrajkumar.com/new/dandebot.html">
+<meta property="og:image" content="https://nishanthrajkumar.com/new/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0A0B0D}
+a{color:#ECEDEE}a:hover{color:#A78BFA}
+</style>
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<div class="site">
+
+<header class="nav">
+<div class="wrap nav-in">
+<a class="brand" href="index.html" aria-label="Nishanth Rajkumar, home"><span class="tilde">~/</span>nishanth<span class="cursor" aria-hidden="true"></span></a>
+<nav class="nav-links" aria-label="Primary">
+<a href="index.html">Home</a>
+<a href="quest2skill.html">Quest2Skill</a>
+<a href="visual-router.html">Visual Router</a>
+<a href="dandebot.html" aria-current="page">Dandebot</a>
+<a href="bin-picking.html">Bin Picking</a>
+<a href="reinforcement-learning.html">Reinforcement Learning</a>
+</nav>
+<div class="nav-social">
+<a class="icon-btn" href="https://github.com/nishanthrajkumarr" aria-label="GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+<a class="icon-btn" href="https://www.linkedin.com/in/nishanthrajkumar15/" aria-label="LinkedIn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="icon-btn" href="https://x.com/nishanthrajkum" aria-label="X"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l11.7 16H20L8.3 4H4z"></path><path d="M4 20l6.8-6.8M20 4l-6.8 6.8"></path></svg></a>
+<a class="icon-btn" href="mailto:nishanthrajkumar1@gmail.com" aria-label="Email"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a>
+</div>
+</div>
+</header>
+
+<main>
+<section class="page-head" id="top">
+<div class="wrap head-split">
+<div>
+<p class="crumb"><a href="index.html">~</a><span>/</span><a href="index.html#engineering">projects</a><span>/</span><span class="here">dandebot</span></p>
+<h1>Dandebot</h1>
+<p class="sub">An all-in-one autonomous lawn-care system.</p>
+<p class="desc">One robot that handles every part of lawn maintenance: weeding, mowing, edging, aerating and blowing.</p>
+<ul class="tags">
+<li class="tag">autonomous-nav</li><li class="tag">weed-segmentation</li><li class="tag">low-level-control</li><li class="tag">diff-drive</li>
+</ul>
+</div>
+<div class="shot" style="height: 360px"><img src="img/dandebot-render.webp" alt="Render of Dandebot with its green status lights" width="1800" height="1012"></div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>README.md</h2><p>Why lawn care, and what went into the platform.</p></div>
+<div class="readme">
+<div class="panel">
+<h3>## problem statement</h3>
+<p>Residential and commercial lawn care is highly dependent on manual labor, with recurring costs for mowing, edging, weeding, and cleanup. Labor shortages, rising wages, travel between properties, repetitive physical work, and the need for multiple dedicated tools all increase the cost of maintaining outdoor spaces.</p>
+<p>Dandebot explores whether a single autonomous mobile platform can reduce that overhead by performing multiple lawn-care tasks (mowing, weeding, edging, and debris blowing) with minimal human intervention.</p>
+<div class="stack" style="margin-top: 6px"><span class="chip">NVIDIA Jetson</span><span class="chip">SolidWorks</span><span class="chip">ROS 2</span></div>
+</div>
+<div class="panel">
+<h3>## implementation notes</h3>
+<ul class="bullets">
+<li>Designed a custom tracked mobile platform and mechanical assemblies in SolidWorks.</li>
+<li>Integrated NVIDIA Jetson as the onboard compute platform for perception and autonomy.</li>
+<li>Built the software stack around ROS 2 for sensor integration, control, and system communication.</li>
+<li>Developed autonomous navigation for unstructured outdoor environments.</li>
+<li>Integrated perception for obstacle detection, terrain awareness, and task execution.</li>
+<li>Designed the platform around modular, task-specific tooling for mowing, weeding, edging, and debris blowing.</li>
+<li>Combined perception, navigation, motion control, and tool actuation into an end-to-end autonomous workflow.</li>
+<li>Validated the system through real-world outdoor testing rather than simulation alone.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Mechanical design approach</h2><p>From concept sketches to SolidWorks assemblies of the chassis, tool heads and linear actuators.</p></div>
+<div class="mosaic">
+<div class="frame dark"><img src="img/dandebot-sketch-1-hd.webp" alt="Line sketch of the robot's circular tool deck" width="1200" height="984" loading="lazy"></div>
+<div class="frame dark"><img src="img/dandebot-sketch-2-hd.webp" alt="Line sketch of the weed extraction auger" width="1168" height="1088" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-1.webp" alt="CAD render of the tracked chassis with the tool module" width="291" height="207" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-2-hd.webp" alt="CAD render of the chassis interior" width="991" height="714" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-3-hd.webp" alt="CAD render of the full robot assembly" width="1086" height="702" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-4-hd.webp" alt="CAD close-up of the drive motors and couplings" width="1055" height="621" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-5.webp" alt="CAD render of the vertical linear actuator" width="138" height="190" loading="lazy"></div>
+<div class="frame"><img src="img/dandebot-cad-6.webp" alt="CAD render of the extraction tool stack" width="152" height="214" loading="lazy"></div>
+</div>
+<figure class="fig" style="margin-top: 20px"><div class="frame"><video controls playsinline preload="none" poster="media/mechanical-assembly.webp" width="960" height="540" aria-label="Assembling the gearbox, rails and track modules"><source src="media/mechanical-assembly.mp4" type="video/mp4"></video></div><figcaption><b>assembly</b> · gearbox, rails and track modules coming together</figcaption></figure>
+<div class="g-2" style="margin-top: 20px">
+<figure class="fig"><div class="frame fill" style="height: 420px"><img src="img/dandebot-mowing-tool.webp" alt="Mowing tool module with its blade and linear actuator" width="1200" height="1600" loading="lazy"></div><figcaption><b>tool</b> · mowing module</figcaption></figure>
+<figure class="fig"><div class="frame fill" style="height: 420px"><img src="img/dandebot-weeding-tool.webp" alt="Weeding tool module mounted on a linear rail" width="1200" height="1228" loading="lazy"></div><figcaption><b>tool</b> · weeding module</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Kinematics design approach</h2><p>Differential-drive kinematics simulated before hardware: trajectory, wheel speeds and orientation.</p></div>
+<div class="g-1-2">
+<figure class="fig"><div class="frame light"><img src="img/dandebot-kinematics-sim.webp" alt="MATLAB figure of the simulated robot path on an x-y grid" width="1280" height="1152" loading="lazy"></div><figcaption><b>sim</b> · robot path on the x–y plane</figcaption></figure>
+<figure class="fig"><div class="frame light"><img src="img/dandebot-kinematics-plots.webp" alt="Four plots: robot trajectory, right wheel speed, left wheel speed and robot orientation" width="1280" height="854" loading="lazy"></div><figcaption><b>plots</b> · trajectory, left/right wheel speed, orientation</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Control system design</h2><p>Cascaded position, velocity and current loops with field-oriented motor control.</p></div>
+<div class="g-3">
+<figure class="fig"><div class="frame fill" style="height: 240px"><img src="img/dandebot-driver.webp" alt="Motor driver board wired on the bench" width="1280" height="720" loading="lazy"></div><figcaption><b>hardware</b> · motor driver bring-up</figcaption></figure>
+<figure class="fig"><div class="frame light fill" style="height: 240px"><img src="img/dandebot-svm.webp" alt="Space vector modulation hexagon plot" width="1280" height="720" loading="lazy"></div><figcaption><b>svm</b> · space-vector modulation</figcaption></figure>
+<figure class="fig"><div class="frame" style="height: 240px; display: flex; justify-content: center"><img src="img/dandebot-waveforms.webp" alt="dq-frame and abc-frame current waveforms" width="290" height="361" loading="lazy" style="height: 100%; width: auto"></div><figcaption><b>dq / abc</b> · frame transforms</figcaption></figure>
+</div>
+<figure class="fig" style="margin-top: 20px"><div class="frame light" style="padding: 16px"><img src="img/dandebot-control-loop.webp" alt="Block diagram of cascaded position, velocity and current controllers with feedback" width="543" height="165" loading="lazy" style="margin: 0 auto"></div><figcaption><b>loop</b> · position → velocity → current controllers with feed-forward and feedback</figcaption></figure>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Build &amp; bring-up</h2><p>Proof of concept, sensor integration, then machining and assembly.</p></div>
+<div class="g-3">
+<figure class="fig"><div class="frame fill" style="height: 240px"><img src="img/dandebot-poc.webp" alt="Laptop showing a costmap during proof-of-concept validation" width="1280" height="720" loading="lazy"></div><figcaption><b>poc</b> · validation on a costmap</figcaption></figure>
+<figure class="fig"><div class="frame fill" style="height: 240px"><img src="img/dandebot-lab.webp" alt="Integrating sensors on the robot at the lab bench" width="1280" height="720" loading="lazy"></div><figcaption><b>sensors</b> · integration and validation</figcaption></figure>
+<figure class="fig"><div class="frame fill" style="height: 240px"><img src="img/dandebot-machining.webp" alt="End mill machining an aluminium plate" width="1280" height="720" loading="lazy"></div><figcaption><b>fab</b> · machining, fabrication and assembly</figcaption></figure>
+</div>
+<div class="g-2" style="margin-top: 20px">
+<figure class="fig"><div class="frame fill" style="height: 340px"><img src="img/dandebot-electronics.webp" alt="Dandebot electronics bay with motor drivers and wiring" width="1600" height="902" loading="lazy"></div><figcaption><b>electronics</b> · drivers, power and wiring in the chassis</figcaption></figure>
+<figure class="fig"><div class="frame fill" style="height: 340px"><video data-loop muted loop playsinline preload="none" poster="media/loop-internals.webp" width="848" height="480" aria-label="Walkaround of Dandebot wiring, controllers and linear actuator"><source src="media/loop-internals.mp4" type="video/mp4"></video></div><figcaption><b>integration</b> · controllers and actuator in place</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Weed perception · DRoC-Net</h2><p>Finding each dandelion and the point it grows from.</p></div>
+<figure class="fig"><div class="frame light"><img src="img/droc-net-overview.webp" alt="DRoC-Net pipeline: tiled rosette instance segmentation followed by per-instance growth-point regression, with held-out measurements" width="2000" height="1302" loading="lazy"></div><figcaption><b>pipeline</b> · stage 1 segments leaf rosettes in overlapping tiles; stage 2 regresses each plant’s growth point</figcaption></figure>
+<div class="split" style="margin-top: 40px; align-items: start">
+<div class="prose">
+<p>DRoC-Net is two networks. An <strong>RF-DETR Seg-Small</strong> model, fine-tuned for one class, segments dandelion leaf rosettes in overlapping 640×640 tiles of the camera frame.</p>
+<p>A separate <strong>DINOv2 ViT-S/14</strong> regressor then looks at each rosette crop and predicts the growth point, the spot the extraction tool needs to hit.</p>
+<p>Training labels come from <strong>SAM 3</strong> concept prompts, and the fine-tuned model is evaluated against that zero-shot teacher.</p>
+<div class="downloads"><a class="dl" href="files/dandelion-detection-overview.pdf" download><svg class="i i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span>Pipeline overview</span><small>PDF · 0.9 MB</small></a><a class="dl" href="files/dandelion-seg.zip" download><svg class="i i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span>Segmentation experiment kit</span><small>Python · zip</small></a></div>
+<div class="row-links"><a class="btn btn-sm" href="https://nishanthrajkumarr.github.io/DRoC-Net/">Interactive explainer <svg class="i i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a><a class="btn btn-sm" href="https://github.com/nishanthrajkumarr/DRoC-Net">Source on GitHub <svg class="i i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"></path></svg></a></div>
+</div>
+<a class="fig-link" href="https://nishanthrajkumarr.github.io/DRoC-Net/"><figure class="fig"><div class="frame"><img src="img/droc-net-card.webp" alt="DRoC-Net interactive explainer: leaf mask and growth point on a lawn tile" width="1600" height="900" loading="lazy"></div><figcaption><b>explainer</b> · nishanthrajkumarr.github.io/DRoC-Net</figcaption></figure></a>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Complete coverage</h2><p>Covering every part of a mapped area, then going home.</p></div>
+<div class="split" style="align-items: start">
+<figure class="fig"><div class="frame"><video controls playsinline preload="none" poster="media/coverage-indoor.webp" width="960" height="540" aria-label="Dandebot running a complete-coverage pattern indoors with the live map in the corner"><source src="media/coverage-indoor.mp4" type="video/mp4"></video></div><figcaption><b>indoor</b> · coverage run with the live map overlay</figcaption></figure>
+<div class="prose">
+<p>The coverage stack goes from the SLAM map to a costmap and a coverage plan, follows it with <strong>Regulated Pure Pursuit</strong>, switches to <strong>DWA</strong> around people, revisits missed patches, then docks.</p>
+<p>A MATLAB port of the simulation runs on the same map, with a live plot of the mowed area and the trail.</p>
+<div class="downloads"><a class="dl" href="files/dandebot-coverage-matlab.zip" download><svg class="i i-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span>Coverage simulation</span><small>MATLAB · zip</small></a></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Indoor testing</h2><p>Target detection, extraction and return-to-home in controlled corridors.</p></div>
+<div class="g-2">
+<figure class="fig"><div class="frame"><video controls playsinline preload="none" poster="media/p2p-extraction.webp" width="960" height="540" aria-label="Dandebot driving to two targets in a corridor and returning home"><source src="media/p2p-extraction.mp4" type="video/mp4"></video></div><figcaption><b>multi-target</b> · two targets and return home</figcaption></figure>
+<figure class="fig"><div class="frame"><video controls playsinline preload="none" poster="media/extraction-after-detection.webp" width="960" height="540" aria-label="Dandebot locking onto a target and extracting it right after detection, with RViz on screen"><source src="media/extraction-after-detection.mp4" type="video/mp4"></video></div><figcaption><b>single-target</b> · immediate extraction after detection</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+<div class="block-head"><h2>Outdoor testing</h2><p>Mapping a real property, then running the full workflow on grass.</p></div>
+<div class="g-2">
+<figure class="fig"><div class="frame light fill" style="height: 320px"><img src="img/dandebot-mapping-hd.webp" alt="Occupancy map beside a satellite view of the property boundary" width="1600" height="734" loading="lazy" style="object-fit: contain"></div><figcaption><b>commissioning</b> · onsite mapping and boundary setup</figcaption></figure>
+<figure class="fig"><div class="frame fill" style="height: 320px"><video data-loop muted loop playsinline preload="none" poster="media/loop-coverage-outdoor.webp" width="848" height="480" aria-label="Dandebot covering a backyard lawn"><source src="media/loop-coverage-outdoor.mp4" type="video/mp4"></video></div><figcaption><b>workflow</b> · end-to-end testing on grass</figcaption></figure>
+</div>
+<figure class="fig" style="margin-top: 20px"><div class="frame fill" style="height: 460px"><img src="img/dandebot-garden-hd.webp" alt="Dandebot on a lawn beside flowering plants" width="1600" height="1059" loading="lazy"></div><figcaption><b>field</b> · on the lawn</figcaption></figure>
+</div>
+</section>
+
+<nav class="wrap pager" aria-label="Project navigation">
+<a href="visual-router.html"><span class="k">← previous</span><span class="v">Lightweight Visual Router</span></a>
+<a class="mid" href="index.html#projects"><span class="k">~/projects</span><span class="v">All projects</span></a>
+<a class="next" href="bin-picking.html"><span class="k">next →</span><span class="v">Franka Bin Picking</span></a>
+</nav>
+</main>
+
+<footer class="wrap"><div class="foot"><span>© 2026 Nishanth Rajkumar · nishanthrajkumar.com</span><a href="#top">back to top ↑</a></div></footer>
+</div>
+
+
+</body></html>
