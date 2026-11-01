@@ -1,7 +1,4 @@
-# nishanthrajkumar.com/new
+# nishanthrajkumar.com
 
-Static portfolio site of Nishanth Rajkumar: plain HTML, CSS and a tiny script for the demo clips.
-
-- Review copy: https://nishanthrajkumarr.github.io/new/
-- Pages carry `<meta name="robots" content="noindex">` while in review; remove it when the site goes live.
-- When `nishanthrajkumarr.github.io` uses the custom domain nishanthrajkumar.com, this repo is served at nishanthrajkumar.com/new automatically.
+Portfolio site of Nishanth Rajkumar: plain HTML, CSS and a small script for the demo clips.
+Served by GitHub Pages from `main` at https://nishanthrajkumar.com (custom domain set by the `CNAME` file).
